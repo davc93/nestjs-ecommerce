@@ -1,0 +1,8 @@
+{
+    "moduleFileExtensions":["js","ts","json"],
+    "rootDir":".",
+    "testEnvironment":"node",
+    "testRegex":".e2e.ts$",
+    "coverageDirectory":"coverage_e2e",
+    "preset": "ts-jest"
+  }

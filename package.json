@@ -1,0 +1,42 @@
+{
+  "name": "nestjs-ecommerce",
+  "version": "1.0.0",
+  "private":true,
+  "description": "Mercado pago packages",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev":"pnpm --filter './apps/**/*' run dev",
+    "build":"pnpm --filter './apps/**/*' run build"
+  },
+  "dependencies": {
+    "eslint": "^8.34.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-config-standard-with-typescript": "^34.0.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-import-resolver-node": "^0.3.7",
+    "eslint-module-utils": "^2.7.4",
+    "eslint-plugin-es": "^4.1.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.6.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-scope": "^7.1.1",
+    "eslint-utils": "^3.0.0",
+    "eslint-visitor-keys": "^3.3.0",
+    "prettier": "^2.8.4",
+    "prettier-linter-helpers": "^1.0.0"
+  },
+  "devDependencies": {},
+  
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davc93/nestjs-ecommerce.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davc93/nestjs-ecommerce/issues"
+  },
+  "homepage": "https://github.com/davc93/nestjs-ecommerce#readme"
+}
