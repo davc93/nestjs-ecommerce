@@ -1,2 +1,3 @@
 coverage
 coverage_e2e
+.env.production
