@@ -1,0 +1,138 @@
+[
+    {
+      "id": 1,
+      "name": "El Camino del Sol",
+      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.",
+      "price": 10000,
+      "stock": 100,
+      "image": "https://i.imgur.com/U4iGx1j.jpeg",
+      "createAt": "2023-02-22T21:07:15.445Z",
+      "updateAt": "2023-02-22T21:07:15.445Z",
+      "brand": {
+        "id": 1,
+        "name": "San Diego",
+        "image": "https://i.imgur.com/U4iGx1j.jpeg",
+        "createAt": "2023-02-22T21:02:42.537Z",
+        "updateAt": "2023-02-22T21:02:42.537Z"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Estrella de Medianoche",
+      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.",
+      "price": 10000,
+      "stock": 100,
+      "image": "https://i.imgur.com/U4iGx1j.jpeg",
+      "createAt": "2023-02-22T21:07:29.878Z",
+      "updateAt": "2023-02-22T21:07:29.878Z",
+      "brand": {
+        "id": 1,
+        "name": "San Diego",
+        "image": "https://i.imgur.com/U4iGx1j.jpeg",
+        "createAt": "2023-02-22T21:02:42.537Z",
+        "updateAt": "2023-02-22T21:02:42.537Z"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Vino de Terciopelo",
+      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.",
+      "price": 10000,
+      "stock": 100,
+      "image": "https://i.imgur.com/U4iGx1j.jpeg",
+      "createAt": "2023-02-22T21:07:36.943Z",
+      "updateAt": "2023-02-22T21:07:36.943Z",
+      "brand": {
+        "id": 1,
+        "name": "San Diego",
+        "image": "https://i.imgur.com/U4iGx1j.jpeg",
+        "createAt": "2023-02-22T21:02:42.537Z",
+        "updateAt": "2023-02-22T21:02:42.537Z"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Cisne Negro",
+      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.",
+      "price": 10000,
+      "stock": 100,
+      "image": "https://i.imgur.com/U4iGx1j.jpeg",
+      "createAt": "2023-02-22T21:07:43.877Z",
+      "updateAt": "2023-02-22T21:07:43.877Z",
+      "brand": {
+        "id": 1,
+        "name": "San Diego",
+        "image": "https://i.imgur.com/U4iGx1j.jpeg",
+        "createAt": "2023-02-22T21:02:42.537Z",
+        "updateAt": "2023-02-22T21:02:42.537Z"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Tejedor de Sueños",
+      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.",
+      "price": 10000,
+      "stock": 100,
+      "image": "https://i.imgur.com/U4iGx1j.jpeg",
+      "createAt": "2023-02-22T21:07:54.701Z",
+      "updateAt": "2023-02-22T21:07:54.701Z",
+      "brand": {
+        "id": 1,
+        "name": "San Diego",
+        "image": "https://i.imgur.com/U4iGx1j.jpeg",
+        "createAt": "2023-02-22T21:02:42.537Z",
+        "updateAt": "2023-02-22T21:02:42.537Z"
+      }
+    },
+    {
+      "id": 6,
+      "name": "Bosque Encantado",
+      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.",
+      "price": 10000,
+      "stock": 100,
+      "image": "https://i.imgur.com/U4iGx1j.jpeg",
+      "createAt": "2023-02-22T21:08:16.874Z",
+      "updateAt": "2023-02-22T21:08:16.874Z",
+      "brand": {
+        "id": 1,
+        "name": "San Diego",
+        "image": "https://i.imgur.com/U4iGx1j.jpeg",
+        "createAt": "2023-02-22T21:02:42.537Z",
+        "updateAt": "2023-02-22T21:02:42.537Z"
+      }
+    },
+    {
+      "id": 7,
+      "name": "Azul Marino",
+      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.",
+      "price": 10000,
+      "stock": 100,
+      "image": "https://i.imgur.com/U4iGx1j.jpeg",
+      "createAt": "2023-02-22T21:08:36.131Z",
+      "updateAt": "2023-02-22T21:08:36.131Z",
+      "brand": {
+        "id": 1,
+        "name": "San Diego",
+        "image": "https://i.imgur.com/U4iGx1j.jpeg",
+        "createAt": "2023-02-22T21:02:42.537Z",
+        "updateAt": "2023-02-22T21:02:42.537Z"
+      }
+    },
+    {
+      "id": 8,
+      "name": "Bajo la Luna",
+      "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.",
+      "price": 10000,
+      "stock": 100,
+      "image": "https://i.imgur.com/U4iGx1j.jpeg",
+      "createAt": "2023-02-22T21:08:52.323Z",
+      "updateAt": "2023-02-22T21:08:52.323Z",
+      "brand": {
+        "id": 1,
+        "name": "San Diego",
+        "image": "https://i.imgur.com/U4iGx1j.jpeg",
+        "createAt": "2023-02-22T21:02:42.537Z",
+        "updateAt": "2023-02-22T21:02:42.537Z"
+      }
+    }
+  ]

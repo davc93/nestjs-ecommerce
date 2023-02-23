@@ -2,7 +2,6 @@ import React, { useContext } from "react"
 import { getProducts } from "../../apis/api/products"
 import { Product } from "../../models/product.model"
 import { ProductCard } from "../../components/ProductCard"
-import { cartContext } from "../../contexts/CartProvider"
 
 export const HomePage = () => {
 
@@ -17,7 +16,7 @@ export const HomePage = () => {
     } catch (error) {
       
     }
-  })
+  },[])
   return (
     <main>
       {products.map((product)=>{

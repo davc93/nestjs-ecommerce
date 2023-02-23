@@ -3,7 +3,7 @@ import { config } from '../../config'
 
 async function dbConnection () {
   try {
-    await mongoose.connect(config.mongodbUri)
+    await mongoose.connect(config.mongodbUri as string)
     console.log('[mongodb]: connection succesfull')
   } catch (error) {
     console.log(`[mongodb]: connection problems ${error}`)

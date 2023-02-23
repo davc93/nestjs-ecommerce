@@ -16,16 +16,16 @@ dotenv.config(options)
 
 export const config = {
   env,
-  accessToken: process.env.MP_ACCESS_TOKEN ?? '',
-  port: process.env.PORT ?? 3000,
-  serverDomain: process.env.SERVER_DOMAIN ?? 'http://localhost:3000',
-  integratorId: process.env.MP_INTEGRATOR_ID ?? undefined,
-  siteDomain: process.env.SITE_DOMAIN ?? 'http://localhost:3000',
+  accessToken: process.env.MP_ACCESS_TOKEN,
+  port: process.env.PORT,
+  serverDomain: process.env.SERVER_DOMAIN,
+  integratorId: process.env.MP_INTEGRATOR_ID,
+  siteDomain: process.env.SITE_DOMAIN,
   gmail: {
     email: process.env.EMAIL,
     apiKey: process.env.APIKEY
   },
-  mongodbUri: process.env.MONGODB_URI ?? ''
+  mongodbUri: process.env.MONGODB_URI
 }
 
 console.log(config)
