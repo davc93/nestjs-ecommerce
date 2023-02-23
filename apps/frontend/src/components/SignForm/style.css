@@ -1,0 +1,4 @@
+.input-groups{
+    display: flex;
+    flex-direction: column;
+}
