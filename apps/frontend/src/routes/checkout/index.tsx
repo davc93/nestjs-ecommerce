@@ -2,10 +2,21 @@ import { useContext } from "react";
 import { cartContext } from "../../contexts/CartProvider";
 import { CheckoutProduct } from "../../components/CheckoutProduct";
 import { PaybuttonMP } from "../../components/PaybuttonMP";
+import { Product } from "../../models/product.model";
 
 export const CheckoutPage = () => {
   const [state, dispatch]: any = useContext(cartContext);
+  const preference = {
+    items: state.products.map((product:Product)=>{
+      return {
+        title: product.name,
+        unit_price:product.price,
+        quantity: 1
+      }
+    })
 
+  }
+  const shipment = null
   return (
     <main>
       <div className="checkout__products">
@@ -17,7 +28,7 @@ export const CheckoutPage = () => {
         Customer Info
       </div>
       <div className="checkout__payments">
-        <PaybuttonMP />
+        <PaybuttonMP preference={preference} shipment={shipment} />
       </div>
     </main>
   );
