@@ -19,9 +19,12 @@ export const HomePage = () => {
   },[])
   return (
     <main>
+      <section className="products-container">
       {products.map((product)=>{
         return <ProductCard key={product.id} {...product} />
       })}
+      </section>
+      
     </main>
   )
 }

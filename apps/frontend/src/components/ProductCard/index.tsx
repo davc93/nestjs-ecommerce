@@ -15,12 +15,12 @@ export const ProductCard = ({id,name,price,description,image}:Partial<Product>) 
     console.log("[product-id]:",id)
   }
     return (
-    <article>
+    <article className='product-card'>
         <img src={image} alt={name} />
         <h4>{name}</h4>
         <span>{price}</span>
         <p>{description}</p>
-        <button onClick={addToCart}>Add To Cart</button>
+        <button className='btn--primary' onClick={addToCart}>Add To Cart</button>
     </article>
   )
 }

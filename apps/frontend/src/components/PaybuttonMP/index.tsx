@@ -7,7 +7,7 @@ declare global {
 }
 
 export const PaybuttonMP = ({ preference, shipment }: any) => {
-  console.log(preference)
+  
   const handleClick = async () => {
     const preferenceId = await getPreferenceId({ preference, shipment });
 
@@ -22,5 +22,5 @@ export const PaybuttonMP = ({ preference, shipment }: any) => {
       autoOpen: true,
     });
   };
-  return <button onClick={handleClick}>PaybuttonMP</button>;
+  return <button className="btn--primary" onClick={handleClick}>PaybuttonMP</button>;
 };

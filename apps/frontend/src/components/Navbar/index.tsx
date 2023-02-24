@@ -27,11 +27,21 @@ export const Navbar = () => {
               </li>
             );
           })}
+          <li>
+            <Link to={"/not-found"}>Login</Link>
+
+
+          </li>
+          <li>
+          <Link to={"/not-found"}>Sign Up</Link>
+          </li>
         </ul>
       </div>
       <div className="cart">
-        <button onClick={() => setModelIsOpen(!modelIsOpen)}>My Cart</button>
-        <div className={`cart__products ${modelIsOpen ? "" : "inactive"}`}>
+        <button onClick={() => setModelIsOpen(!modelIsOpen)}>My Cart  
+        </button>
+        <span>{state.products.length}</span>
+        <div className={`cart__products ${modelIsOpen ? "" : "inactive"}`} style={{}}>
           <ul>
             {state.products.map((product: any) => {
               const handleClick = () => {
@@ -47,11 +57,13 @@ export const Navbar = () => {
                     />
                     <h5>{product.name}</h5>
                     <span>{product.price}</span>
-                  </div>
                   <button onClick={handleClick}>X</button>
+                  </div>
                 </li>
               );
+
             })}
+            {state.products.length == 0 && <h4>No Hay Productos</h4>}
             <Link onClick={() => setModelIsOpen(false)} to={"/checkout"}>
               Checkout
             </Link>
