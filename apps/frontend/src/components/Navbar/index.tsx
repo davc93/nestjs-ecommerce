@@ -1,9 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext, useReducer } from "react";
 import { Link } from "react-router-dom";
-import { cartContext } from "../../contexts/CartProvider";
+import {  appContext} from "../../contexts/AppContext";
+
 
 export const Navbar = () => {
-  const [state, dispatch]: any = useContext(cartContext);
+  const [state,dispatch]:any = useContext(appContext)
   const [modelIsOpen, setModelIsOpen] = React.useState(false);
   const routes = [
     {

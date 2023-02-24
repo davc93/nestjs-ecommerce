@@ -1,6 +1,6 @@
 import React, { useContext } from "react"
 import { getProducts } from "../../apis/api/products"
-import { Product } from "../../models/product.model"
+import { Product } from "../../models/api/product.model"
 import { ProductCard } from "../../components/ProductCard"
 
 export const HomePage = () => {

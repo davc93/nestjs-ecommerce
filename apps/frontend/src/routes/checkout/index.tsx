@@ -1,11 +1,12 @@
-import { useContext } from "react";
-import { cartContext } from "../../contexts/CartProvider";
+import { useContext, useReducer } from "react";
 import { CheckoutProduct } from "../../components/CheckoutProduct";
 import { PaybuttonMP } from "../../components/PaybuttonMP";
-import { Product } from "../../models/product.model";
+import { Product } from "../../models/api/product.model";
+import { Order } from "../../models/mercadopago/order.model";
+import { appContext } from "../../contexts/AppContext";
 
 export const CheckoutPage = () => {
-  const [state, dispatch]: any = useContext(cartContext);
+  const [state, dispatch]:any = useContext(appContext)
   const preference = {
     items: state.products.map((product:Product)=>{
       return {
@@ -16,7 +17,11 @@ export const CheckoutPage = () => {
     })
 
   }
-  const shipment = null
+  const shipment = {
+    cost:5000,
+
+  }
+  const order:Order = {preference,shipment}
   return (
     <main>
       <div className="checkout__products">
@@ -28,7 +33,7 @@ export const CheckoutPage = () => {
         Customer Info
       </div>
       <div className="checkout__payments">
-        <PaybuttonMP preference={preference} shipment={shipment} />
+        <PaybuttonMP order={order} />
       </div>
     </main>
   );

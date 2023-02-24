@@ -1,4 +1,4 @@
-import { Product } from "../../models/product.model";
+import { Product } from "../../models/api/product.model";
 
 export const CheckoutProduct = ({id,name,image,price}:Product) => {
   return (

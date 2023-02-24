@@ -1,7 +1,8 @@
 import { config } from "../../config";
+import { Order } from "../../models/mercadopago/order.model";
 
 
-export const getPreferenceId = async (order:any) => {
+export const getPreferenceId = async (order:Order) => {
   const response = await fetch(`${config.mercadopagoUrl}/api/create_preference`, {
     method: "POST",
     headers: {

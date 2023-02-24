@@ -1,5 +1,6 @@
 import { config } from "../../config"
-import { Product } from "../../models/product.model"
+import { Product } from "../../models/api/product.model"
+
 
 
 export const getProducts = async () => {

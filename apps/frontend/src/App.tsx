@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { CartProvider } from "./contexts/CartProvider";
+import { AppContext } from "./contexts/AppContext";
 import { HomePage } from "./routes/home";
 import { ProductPage } from "./routes/product";
 import { CheckoutPage } from "./routes/checkout";
@@ -10,7 +10,7 @@ import { Layout } from "./components/Layout";
 
 export const App = () => {
   return (
-    <CartProvider>
+    <AppContext>
       <BrowserRouter>
         <Layout>
           <Routes>
@@ -22,7 +22,7 @@ export const App = () => {
           </Routes>
         </Layout>
       </BrowserRouter>
-    </CartProvider>
+    </AppContext>
   );
 };
 

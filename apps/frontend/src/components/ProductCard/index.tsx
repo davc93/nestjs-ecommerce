@@ -1,10 +1,11 @@
-import React, { useContext } from 'react'
-import { Product } from '../../models/product.model'
-import { cartContext } from '../../contexts/CartProvider'
+import React, { useContext, useReducer } from 'react'
+import { Product } from '../../models/api/product.model'
+import { appContext} from '../../contexts/AppContext'
+
 
 export const ProductCard = ({id,name,price,description,image}:Partial<Product>) => {
 
-  const [state,dispatch]:any = useContext(cartContext)
+  const [state,dispatch]:any = useContext(appContext)
   const addToCart = () => {
     dispatch({type:"ADD_ITEM",payload:{
       id,
@@ -12,7 +13,6 @@ export const ProductCard = ({id,name,price,description,image}:Partial<Product>) 
       price,
       description,image
     }}) 
-    console.log("[product-id]:",id)
   }
     return (
     <article className='product-card'>

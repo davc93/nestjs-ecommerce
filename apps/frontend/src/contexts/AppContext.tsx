@@ -1,15 +1,26 @@
 import { Reducer, createContext, useReducer } from "react";
 
-export const cartContext = createContext({});
+export const appContext = createContext({});
 const initialState = {
+  user:{},
   products:[]
 };
 
-const cartReducer = (
+const appReducer = (
   state: any,
   action: { type: any; payload?: any }
 ) => {
   switch (action.type) {
+
+    case "SET_USER":
+      const user = action.payload
+      return {
+        ...state,
+        user:{
+          ...user
+        }
+      }
+
     case "ADD_ITEM":
       const itemToAdd = action.payload;
 
@@ -35,11 +46,11 @@ const cartReducer = (
   }
 };
 
-export const CartProvider = ({ children }: any) => {
-  const [state, dispatch] = useReducer(cartReducer, initialState);
+export const AppContext = ({ children }: any) => {
+  const [state, dispatch] = useReducer(appReducer, initialState);
   return (
-    <cartContext.Provider value={[state, dispatch]}>
+    <appContext.Provider value={[state, dispatch]}>
       {children}
-    </cartContext.Provider>
+    </appContext.Provider>
   );
 };
