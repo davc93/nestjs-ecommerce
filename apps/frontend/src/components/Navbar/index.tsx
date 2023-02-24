@@ -1,10 +1,11 @@
 import React, { useContext, useReducer } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { appContext } from "../../contexts/AppContext";
 
 export const Navbar = () => {
   const [state, dispatch]: any = useContext(appContext);
   const [modelIsOpen, setModelIsOpen] = React.useState(false);
+  const navigate = useNavigate()
   const routes = [
     {
       path: "/",
@@ -42,6 +43,8 @@ export const Navbar = () => {
   ];
   const handleLogout = () => {
     dispatch({type:"LOGOUT"})
+    navigate('/')
+    
   }
 
   return (
