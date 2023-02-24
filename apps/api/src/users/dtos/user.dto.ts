@@ -5,6 +5,7 @@ import {
   Length,
   IsPositive,
   IsOptional,
+  Equals
 } from 'class-validator';
 import { PartialType, ApiProperty } from '@nestjs/swagger';
 
@@ -22,6 +23,7 @@ export class CreateUserDto {
 
   @IsNotEmpty()
   @ApiProperty()
+  @Equals("customer",{message:"Only Customer Accepted"})
   readonly role: string;
 
   @IsOptional()

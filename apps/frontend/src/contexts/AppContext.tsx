@@ -13,14 +13,22 @@ const appReducer = (
   switch (action.type) {
 
     case "SET_USER":
-      const user = action.payload
+      const {access_token,user} = action.payload
       return {
         ...state,
         user:{
-          ...user
+          ...user,
+          id:user.id,
+          email:user.email,
+
         }
       }
-
+    
+    case "LOGOUT":
+      return{
+        ...state,
+        user:{}
+      } 
     case "ADD_ITEM":
       const itemToAdd = action.payload;
 

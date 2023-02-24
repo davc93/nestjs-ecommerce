@@ -1,21 +1,48 @@
 import React, { useContext, useReducer } from "react";
 import { Link } from "react-router-dom";
-import {  appContext} from "../../contexts/AppContext";
-
+import { appContext } from "../../contexts/AppContext";
 
 export const Navbar = () => {
-  const [state,dispatch]:any = useContext(appContext)
+  const [state, dispatch]: any = useContext(appContext);
   const [modelIsOpen, setModelIsOpen] = React.useState(false);
   const routes = [
     {
       path: "/",
       name: "Home",
+      private: false,
+      onlyPublic: false,
     },
     {
       path: "/checkout",
       name: "Checkout",
+      private: false,
+      onlyPublic: false,
+    },
+
+    {
+      path: "/login",
+      name: "Login",
+      private: false,
+      onlyPublic: true,
+    },
+
+    {
+      path: "/signup",
+      name: "Sign Up",
+      private: false,
+      onlyPublic: true,
+    },
+
+    {
+      path: "/profile",
+      name: "Profile",
+      private: true,
+      onlyPublic: false,
     },
   ];
+  const handleLogout = () => {
+    dispatch({type:"LOGOUT"})
+  }
 
   return (
     <nav>
@@ -24,25 +51,32 @@ export const Navbar = () => {
           {routes.map(({ name, path }) => {
             return (
               <li key={name}>
-                <Link onClick={() => setModelIsOpen(false)} to={path}>{name}</Link>
+                <Link onClick={() => setModelIsOpen(false)} to={path}>
+                  {name}
+                </Link>
               </li>
             );
           })}
-          <li>
-            <Link to={"/not-found"}>Login</Link>
+          {state.user.email && (
+            <>
+                        <li>
+              <h5>{state.user.email}</h5>
+            </li>
+            <li>
+              <button onClick={handleLogout}>Logout</button>
+            </li>
+            </>
 
-
-          </li>
-          <li>
-          <Link to={"/not-found"}>Sign Up</Link>
-          </li>
+          )}
         </ul>
       </div>
       <div className="cart">
-        <button onClick={() => setModelIsOpen(!modelIsOpen)}>My Cart  
-        </button>
+        <button onClick={() => setModelIsOpen(!modelIsOpen)}>My Cart</button>
         <span>{state.products.length}</span>
-        <div className={`cart__products ${modelIsOpen ? "" : "inactive"}`} style={{}}>
+        <div
+          className={`cart__products ${modelIsOpen ? "" : "inactive"}`}
+          style={{}}
+        >
           <ul>
             {state.products.map((product: any) => {
               const handleClick = () => {
@@ -58,11 +92,10 @@ export const Navbar = () => {
                     />
                     <h5>{product.name}</h5>
                     <span>{product.price}</span>
-                  <button onClick={handleClick}>X</button>
+                    <button onClick={handleClick}>X</button>
                   </div>
                 </li>
               );
-
             })}
             {state.products.length == 0 && <h4>No Hay Productos</h4>}
             <Link onClick={() => setModelIsOpen(false)} to={"/checkout"}>

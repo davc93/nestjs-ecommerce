@@ -1,18 +1,24 @@
-import React, { ChangeEvent, FocusEventHandler, FormEvent, useContext, useReducer, useRef } from "react";
-import "./style.css";
-import { config } from "../../config";
-import { appContext} from "../../contexts/AppContext";
-import {useNavigate} from'react-router-dom'
+import React, {
+  ChangeEvent,
+  FocusEventHandler,
+  FormEvent,
+  useContext,
+  useReducer,
+  useRef,
+} from "react";
+import { appContext } from "../../contexts/AppContext";
+import { useNavigate } from "react-router-dom";
 import { auth } from "../../apis/api/auth";
 import { User } from "../../models/api/user.model";
 
-export const SignUpForm = () => {
+export const LoginForm = () => {
+  const [state, dispatch]: any = useContext(appContext);
   const [data, setData] = React.useState<Partial<User>>({});
   const [loading, setLoading] = React.useState(false);
   const [submitMessage, setSubmitMessage] = React.useState<string | null>(null);
   // const [validationErrors, setValidationErrors]: any = React.useState({});
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     setData({
@@ -29,29 +35,27 @@ export const SignUpForm = () => {
       //   const [key, value] = item;
       //   validate(key, value);
       // });
+
+      const response:any = await auth.login({
+        email: data.email,
+        password: data.password,
+      });
+    
       
-      const response = await auth.signUp({
-        email:data.email,
-        password:data.password
-      })
       if(response.error){
         const {error,message} = response
         console.error("Error en submit", error);
         setLoading(false);
         setSubmitMessage(`${message}`);
       } else {
-        setSubmitMessage("Usuario creado")
-        navigate('/login')
+        dispatch({type:"SET_USER",payload:response})
+        setSubmitMessage("Loggin succesfull")
+        navigate('/profile')
         setLoading(false);
       }
 
-    
-  }
-
-    
-
     // console.log(data)
-  
+  };
 
   const handleBlur: FocusEventHandler<HTMLInputElement> = (event) => {
     // validate(event.target.name, event.target.value);
