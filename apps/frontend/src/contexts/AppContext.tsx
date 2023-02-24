@@ -2,6 +2,7 @@ import { Reducer, createContext, useReducer } from "react";
 
 export const appContext = createContext({});
 const initialState = {
+  access_token:null,
   user:{},
   products:[]
 };
@@ -16,6 +17,7 @@ const appReducer = (
       const {access_token,user} = action.payload
       return {
         ...state,
+        access_token,
         user:{
           ...user,
           id:user.id,
@@ -27,6 +29,7 @@ const appReducer = (
     case "LOGOUT":
       return{
         ...state,
+        access_token:null,
         user:{}
       } 
     case "ADD_ITEM":
