@@ -63,12 +63,12 @@ export class ProductsController {
   create(@Body() payload: CreateProductDto) {
     return this.productsService.create(payload);
   }
-
+  @Roles(Role.ADMIN)
   @Put(':id')
   update(@Param('id') id: number, @Body() payload: UpdateProductDto) {
     return this.productsService.update(id, payload);
   }
-
+  @Roles(Role.ADMIN)
   @Put(':id/category/:categoryId')
   addCategoryToProduct(
     @Param('id') id: number,
@@ -76,11 +76,12 @@ export class ProductsController {
   ) {
     return this.productsService.addCategoryToProduct(id, categoryId);
   }
-
+  @Roles(Role.ADMIN)
   @Delete(':id')
   delete(@Param('id') id: number) {
     return this.productsService.remove(id);
   }
+  @Roles(Role.ADMIN)
 
   @Delete(':id/category/:categoryId')
   deleteCategory(

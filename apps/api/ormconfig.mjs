@@ -13,9 +13,9 @@ const instance = new DataSource({
   cli: {
     migrationsDir: 'src/database/migrations',
   },
-  ssl: {
-    rejectUnauthorized: false,
-  },
+  // ssl: {
+  //   rejectUnauthorized: false,
+  // },
 })
 
 
