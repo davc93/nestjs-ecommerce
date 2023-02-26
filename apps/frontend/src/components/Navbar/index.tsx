@@ -110,7 +110,7 @@ export const Navbar = () => {
                 <h5>{state.user?.email}</h5>
               </li>
               <li>
-                <button onClick={handleLogout}>Logout</button>
+                <button className="btn--secondary" onClick={handleLogout}>Logout</button>
               </li>
             </>
           )}

@@ -244,6 +244,7 @@ nav {
 
 .menu ul {
   display: flex;
+  align-items: center;
   gap: 20px;
 }
 
@@ -345,6 +346,7 @@ nav {
 
 @media (min-width: 768px) {
   .page {
+    padding-top: 120px;
     padding-inline: 60px;
   }
 
@@ -355,6 +357,8 @@ nav {
 
 @media (min-width: 1024px) {
   .page {
+
+    padding-top: 120px;
     padding-inline: 100px;
   }
   .products-container {
