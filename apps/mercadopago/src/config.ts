@@ -18,9 +18,9 @@ export const config = {
   env,
   accessToken: process.env.MP_ACCESS_TOKEN,
   port: process.env.PORT,
-  serverDomain: process.env.SERVER_DOMAIN,
+  apiUrl: process.env.API_URL,
   integratorId: process.env.MP_INTEGRATOR_ID,
-  siteDomain: process.env.SITE_DOMAIN,
+  frontendUrl: process.env.FRONTEND_URL,
   gmail: {
     email: process.env.EMAIL,
     apiKey: process.env.APIKEY

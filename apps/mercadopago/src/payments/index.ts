@@ -15,12 +15,12 @@ const createPreference = async (clientPreference: Preference) => {
   const preference: Preference = {
     ...clientPreference,
     back_urls: {
-      success: `${config.siteDomain}/payments/success`,
-      failure: `${config.siteDomain}/payments/failure`,
-      pending: `${config.siteDomain}/payments/pending`
+      success: `${config.frontendUrl}/payments/success`,
+      failure: `${config.frontendUrl}/payments/failure`,
+      pending: `${config.frontendUrl}/payments/pending`
     },
     auto_return: 'approved',
-    notification_url: `${config.serverDomain}/api/notification_url`,
+    notification_url: `${config.apiUrl}/api/notification_url`,
     external_reference: ''
   }
 
