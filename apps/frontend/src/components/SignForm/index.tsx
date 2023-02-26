@@ -134,7 +134,7 @@ export const SignUpForm = () => {
         />
         {validationErrors.password && <p>{validationErrors.password}</p>}
       </div>
-      <button type="submit" disabled={isDisable}>Sign up</button>
+      <button className="btn--secondary" type="submit" disabled={isDisable}>Sign up</button>
       {submitMessage && <p>{submitMessage}</p>}
       {loading && <p>Loading...</p>}
     </form>

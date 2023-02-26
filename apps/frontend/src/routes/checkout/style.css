@@ -1,0 +1,13 @@
+.checkout-page{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    grid-auto-rows: auto;
+    gap: 30px;
+    place-content: center;
+}
+.checkout__products{
+    width: 100%;
+}
+.checkout__customer{
+    width: 100%;
+}

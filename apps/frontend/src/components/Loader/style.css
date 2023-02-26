@@ -1,0 +1,40 @@
+/* Define the individual bubbles */
+
+.bubble-loader{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.bubble-loader .bubble {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin: 0 5px;
+  animation: animate 1s ease-in-out infinite;
+}
+
+/* Define the animation for the bubbles */
+@keyframes animate {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Define the color of the bubbles */
+.bubble-loader .bubble:nth-child(1) {
+  background-color: var(--secondary);
+}
+.bubble-loader .bubble:nth-child(2) {
+  background-color: var(--secondary);
+  animation-delay: 0.2s;
+}
+.bubble-loader .bubble:nth-child(3) {
+  background-color: var(--secondary);
+  animation-delay: 0.4s;
+}

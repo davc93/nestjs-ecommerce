@@ -1,13 +1,14 @@
 import React, { useContext, useReducer } from 'react'
 import { Product } from '../../models/api/product.model'
 import { appContext} from '../../contexts/AppContext'
+import { appReducerActions } from '../../contexts/AppReducer'
 
 
 export const ProductCard = ({id,name,price,description,image}:Partial<Product>) => {
 
   const [state,dispatch]:any = useContext(appContext)
   const addToCart = () => {
-    dispatch({type:"ADD_ITEM",payload:{
+    dispatch({type:appReducerActions.ADD_ITEM,payload:{
       id,
       name,
       price,

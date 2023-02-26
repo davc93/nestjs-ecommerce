@@ -1,12 +1,15 @@
-import { Product } from "../../models/api/product.model";
+import { CartItem } from "../../models/AppUser.model";
+import './style.css'
 
-export const CheckoutProduct = ({id,name,image,price}:Product) => {
+export const CheckoutItems = ({product,quantity}:CartItem) => {
   return (
-    <li key={id}>
-      <div>
-        <img src={image} alt={name} style={{ width: 80 }} />
-        <h5>{name}</h5>
-        <span>{price}</span>
+    <li key={product.id}>
+      <div className="checkout-page__item">
+        <img src={product.image} alt={product.name} style={{ width: 80 }} />
+        <h5>{product.name}</h5>
+        <span>{product.price}</span>
+
+        <span>{quantity}</span>
       </div>
     </li>
   );

@@ -2,6 +2,10 @@ import { SignUpForm } from "../../components/SignForm"
 
 export const SingUpPage = () => {
   return (
-    <SignUpForm />
+
+    <div className="signup-page">
+      <h1>Sign Up</h1>
+      <SignUpForm />
+    </div>
   )
 }
