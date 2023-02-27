@@ -7,7 +7,7 @@ on:
     branches: [main,master]
 
 jobs:
-  e2e:
+  unit-test:
     runs-on: ubuntu-latest
     container:
       image: node:16
