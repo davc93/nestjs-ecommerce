@@ -25,4 +25,4 @@ jobs:
       - name: Install dependencies
         run: pnpm i --frozen-lockfile
       - name: run test components
-        run: pnpm run test
+        run: pnpm run test:frontend
