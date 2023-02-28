@@ -28,7 +28,10 @@ export const PaybuttonMP:React.FC<{order:Order}> = ({order}) => {
         },
         autoOpen: true,
       });
-      setLoading(false)
+      setTimeout(() => {
+        
+        setLoading(false)
+      }, 3000);
       
     } catch (error) {
       console.error(error)

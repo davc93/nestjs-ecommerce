@@ -28,7 +28,7 @@ export const appReducer = (
       return {
         ...state,
         access_token: null,
-        user: {},
+        user: null,
       };
     case appReducerActions.ADD_ITEM:
       const productToAdd = action.payload;
