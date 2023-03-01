@@ -1,15 +1,16 @@
 import React, { useContext, useReducer } from 'react'
-import { appContext } from '../../contexts/AppContext'
+import { userContext } from '../../contexts/UserContext'
 
 export const ProfilePage = () => {
 
-  const [state,dispatch]: any = useContext(appContext)
+  const [userState,userDispatch]: any = useContext(userContext)
+  console.log('estoy aqui')
   return (
     <main>
       <div>
         <h2>Your Info</h2>
 
-        <h3>{state.user.email}</h3>
+        <h3>{userState.user.email}</h3>
       </div>
       <div>
         <h2>Your Orders</h2>

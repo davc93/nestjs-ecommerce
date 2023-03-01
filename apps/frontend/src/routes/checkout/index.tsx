@@ -1,15 +1,14 @@
 import { useContext, useReducer } from "react";
 import { CheckoutItems } from "../../components/CheckoutProduct";
 import { PaybuttonMP } from "../../components/PaybuttonMP";
-import { Product } from "../../models/api/product.model";
 import { Order, Preference } from "../../models/mercadopago/order.model";
-import { appContext } from "../../contexts/AppContext";
-import { CartItem } from "../../models/AppUser.model";
+
 import "./style.css";
+import { cartContext } from "../../contexts/CartContext";
 export const CheckoutPage = () => {
-  const [state, dispatch]: any = useContext(appContext);
+  const [cartState, cartDispatch] = useContext(cartContext);
   const preference: Preference = {
-    items: state.items.map((item: CartItem) => {
+    items: cartState.items.map((item) => {
       return {
         title: item.product.name,
         unit_price: item.product.price,
@@ -24,7 +23,7 @@ export const CheckoutPage = () => {
   return (
     <main className="checkout-page">
       <div className="checkout__products">
-        {state.items.map((item: CartItem) => {
+        {cartState.items.map((item) => {
           return <CheckoutItems key={item.product.id} {...item} />;
         })}
       </div>

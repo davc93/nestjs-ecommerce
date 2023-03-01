@@ -1,40 +1,22 @@
-import { CartItem } from "../models/AppUser.model";
+import { Cart, Item } from "../models/App.model";
+import { Product } from "../models/api/product.model";
 
-export const appReducerActions = {
+export const cartReducerActions = {
   ADD_ITEM: "ADD_ITEM",
   REMOVE_ITEM: "REMOVE_ITEM",
-  SET_USER: "SET_USER",
-  LOGOUT: "LOGOUT",
 };
 
-export const appReducer = (
-  state: any,
-  action: { type: any; payload?: any }
+export const cartReducer = (
+  state: Cart,
+  action: { type: any; payload?: Product }
 ) => {
   switch (action.type) {
-    case appReducerActions.SET_USER:
-      const { access_token, user } = action.payload;
-      return {
-        ...state,
-        access_token,
-        user: {
-          ...user,
-          id: user.id,
-          email: user.email,
-        },
-      };
-
-    case appReducerActions.LOGOUT:
-      return {
-        ...state,
-        access_token: null,
-        user: null,
-      };
-    case appReducerActions.ADD_ITEM:
-      const productToAdd = action.payload;
+    
+    case cartReducerActions.ADD_ITEM:
+      const productToAdd = action.payload as Product
       
       const existingItemIndex = state.items.findIndex(
-        (item:CartItem) => item.product.id === productToAdd.id
+        (item:Item) => item.product.id === productToAdd.id
       );
 
       if (existingItemIndex !== -1) {
@@ -53,18 +35,18 @@ export const appReducer = (
           ],
         };
       } else {
-        const newItem: CartItem = { product: productToAdd, quantity: 1 };
+        const newItem: Item = { product: productToAdd, quantity: 1 };
         return { ...state, items: [...state.items, newItem] };
       }
 
-    case appReducerActions.REMOVE_ITEM:
-      const productToRemove = action.payload;
+    case cartReducerActions.REMOVE_ITEM:
+      const productToRemove = action.payload as Product
       const itemToRemoveIndex = state.items.findIndex(
-        (item:CartItem) => item.product.id === productToRemove.id
+        (item:Item) => item.product.id === productToRemove.id
       );
       if (itemToRemoveIndex !== -1) {
         const itemToRemove = state.items[itemToRemoveIndex];
-        let updatedItems: CartItem[];
+        let updatedItems: Item[];
 
         if (itemToRemove.quantity > 1) {
           const updatedItem = {

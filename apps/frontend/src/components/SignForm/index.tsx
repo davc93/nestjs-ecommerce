@@ -8,7 +8,6 @@ import React, {
 } from "react";
 import "./style.css";
 import { config } from "../../config";
-import { appContext } from "../../contexts/AppContext";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../../apis/api/auth";
 import { User } from "../../models/api/user.model";

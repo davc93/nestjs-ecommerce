@@ -6,14 +6,15 @@ import React, {
   useReducer,
   useRef,
 } from "react";
-import { appContext } from "../../contexts/AppContext";
+
 import { useNavigate } from "react-router-dom";
 import { auth } from "../../apis/api/auth";
 import { User } from "../../models/api/user.model";
 import { emailSchema, passwordSchema } from "../../dtos/user";
+import { userContext } from "../../contexts/UserContext";
 
 export const LoginForm = () => {
-  const [state, dispatch]: any = useContext(appContext);
+  const [userState, userDispatch]: any = useContext(userContext);
   const [data, setData] = React.useState<Partial<User>>({});
   const [loading, setLoading] = React.useState(false);
   const [submitMessage, setSubmitMessage] = React.useState<string | null>(null);
@@ -53,7 +54,7 @@ export const LoginForm = () => {
       setLoading(false);
       setSubmitMessage(`${message}`);
     } else {
-      dispatch({ type: "SET_USER", payload: response });
+      userDispatch({ type: "SET_USER", payload: response });
       setSubmitMessage("Loggin succesfull");
       navigate("/profile");
       setLoading(false);
