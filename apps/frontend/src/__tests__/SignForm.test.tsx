@@ -1,18 +1,17 @@
-import { render,screen } from '@testing-library/react';
-import {BubbleLoader} from '../components/Loader'
-import { SignUpForm } from '../components/SignForm';
+import { render, screen } from '@testing-library/react'
+import { BubbleLoader } from '../components/Loader'
+import { SignUpForm } from '../components/SignForm'
 // To Test
-
 
 // Tests
 test('Renders main page correctly', () => {
-   // Setup
-   render(<SignUpForm />);
+  // Setup
+  render(<SignUpForm />)
 
-   // Pre Expecations
+  // Pre Expecations
 
-   // Init
+  // Init
 
-   // Post Expectations
-  expect(true).toBeTruthy();
-});
+  // Post Expectations
+  expect(true).toBeTruthy()
+})

@@ -1,5 +1,5 @@
-import { User } from "./user.model";
+import { type User } from './user.model'
 
 export interface Order {
-    user:User
+  user: User
 }

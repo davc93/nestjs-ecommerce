@@ -18,5 +18,6 @@
         "react"
     ],
     "rules": {
-    }
+    },
+    "ignorePatterns": ["__tests__**/*"]
 }

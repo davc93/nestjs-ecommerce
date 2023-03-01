@@ -1,7 +1,7 @@
-import { Cart, Item } from "../../models/App.model";
+import { Cart, type Item } from '../../models/App.model'
 import './style.css'
 
-export const CheckoutItems = ({product,quantity}:Item) => {
+export const CheckoutItems = ({ product, quantity }: Item) => {
   return (
     <li key={product.id}>
       <div className="checkout-page__item">
@@ -12,5 +12,5 @@ export const CheckoutItems = ({product,quantity}:Item) => {
         <span>{quantity}</span>
       </div>
     </li>
-  );
-};
+  )
+}

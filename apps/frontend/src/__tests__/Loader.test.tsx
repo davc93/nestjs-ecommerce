@@ -1,17 +1,16 @@
-import { render,screen } from '@testing-library/react';
-import {BubbleLoader} from '../components/Loader'
+import { render, screen } from '@testing-library/react'
+import { BubbleLoader } from '../components/Loader'
 // To Test
-
 
 // Tests
 test('Renders main page correctly', () => {
-   // Setup
-   render(<BubbleLoader />);
+  // Setup
+  render(<BubbleLoader />)
 
-   // Pre Expecations
+  // Pre Expecations
 
-   // Init
+  // Init
 
-   // Post Expectations
-  expect(true).toBeTruthy();
-});
+  // Post Expectations
+  expect(true).toBeTruthy()
+})

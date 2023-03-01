@@ -1,15 +1,15 @@
-import { Product } from "./api/product.model";
-import {User} from "./api/user.model"
+import { type Product } from './api/product.model'
+import { type User } from './api/user.model'
 export interface AppUser {
-    user:Partial<User> | null
+  user: Partial<User> | null
 }
 
 export interface Cart {
-    items:Item[]
+  items: Item[]
 
 }
 export interface Item {
-    product:Product,
-    quantity: number
+  product: Product
+  quantity: number
 
 }

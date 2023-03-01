@@ -1,7 +1,7 @@
-import { User } from "./user.model";
+import { type User } from './user.model'
 
 export interface Auth {
-    access_token:string;
-    user:Partial<User>;
+  user: Partial<User>
+  access_token?: string
 
 }

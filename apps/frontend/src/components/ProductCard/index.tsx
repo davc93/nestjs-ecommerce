@@ -1,22 +1,24 @@
 import React, { useContext, useReducer } from 'react'
-import { Product } from '../../models/api/product.model'
+import { type Product } from '../../models/api/product.model'
 
 import { cartReducerActions } from '../../contexts/cartReducer'
 import { cartContext } from '../../contexts/CartContext'
 
-
-export const ProductCard = ({id,name,price,description,image}:Partial<Product>) => {
-
-  const [cartState,cartDispatch]:any = useContext(cartContext)
+export const ProductCard = ({ id, name, price, description, image }: Partial<Product>) => {
+  const [cartState, cartDispatch]: any = useContext(cartContext)
   const addToCart = () => {
-    cartDispatch({type:cartReducerActions.ADD_ITEM,payload:{
-      id,
-      name,
-      price,
-      description,image
-    }}) 
+    cartDispatch({
+      type: cartReducerActions.ADD_ITEM,
+      payload: {
+        id,
+        name,
+        price,
+        description,
+        image
+      }
+    })
   }
-    return (
+  return (
     <article className='product-card'>
         <img src={image} alt={name} />
         <h4>{name}</h4>

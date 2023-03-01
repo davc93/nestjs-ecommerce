@@ -1,18 +1,18 @@
-import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-import { HomePage } from "./routes/home";
-import { ProductPage } from "./routes/product";
-import { CheckoutPage } from "./routes/checkout";
-import { UnAuthorizedPage } from "./routes/unauth";
-import { NotFoundPage } from "./routes/notFound";
-import { Layout } from "./components/Layout";
-import { LoginPage } from "./routes/login";
-import { SingUpPage } from "./routes/signup";
-import { ProfilePage } from "./routes/profile";
-import { AuthRoute } from "./components/AuthRoute";
-import { UserContext } from "./contexts/UserContext";
-import { CartContext } from "./contexts/CartContext";
+import { HomePage } from './routes/home'
+import { ProductPage } from './routes/product'
+import { CheckoutPage } from './routes/checkout'
+import { UnAuthorizedPage } from './routes/unauth'
+import { NotFoundPage } from './routes/notFound'
+import { Layout } from './components/Layout'
+import { LoginPage } from './routes/login'
+import { SingUpPage } from './routes/signup'
+import { ProfilePage } from './routes/profile'
+import { AuthRoute } from './components/AuthRoute'
+import { UserContext } from './contexts/UserContext'
+import { CartContext } from './contexts/CartContext'
 
 export const App = () => {
   return (
@@ -43,7 +43,7 @@ export const App = () => {
         </BrowserRouter>
       </CartContext>
     </UserContext>
-  );
-};
+  )
+}
 
-export default App;
+export default App

@@ -1,6 +1,6 @@
 import React, {
   ChangeEvent,
-  FocusEventHandler,
+  type FocusEventHandler,
   FormEvent,
   useContext,
   useReducer,
@@ -9,58 +9,50 @@ import React, {
 
 import { useNavigate } from "react-router-dom";
 import { auth } from "../../apis/api/auth";
-import { User } from "../../models/api/user.model";
+import { type User } from "../../models/api/user.model";
 import { emailSchema, passwordSchema } from "../../dtos/user";
 import { userContext } from "../../contexts/UserContext";
+import { Auth } from "../../models/api/auth.model";
 
 export const LoginForm = () => {
-  const [userState, userDispatch]: any = useContext(userContext);
+  const [userState, userDispatch] = useContext(userContext);
   const [data, setData] = React.useState<Partial<User>>({});
   const [loading, setLoading] = React.useState(false);
   const [submitMessage, setSubmitMessage] = React.useState<string | null>(null);
-  const [validationErrors, setValidationErrors]: any = React.useState({});
-  const [isDisable, setIsDisable] = React.useState(true);
+  const [validationErrors, setValidationErrors] = React.useState<Partial<User>>(
+    {}
+  );
 
   const navigate = useNavigate();
-
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
     setData({
       ...data,
       [event.target?.name]: event.target?.value,
     });
-    if (event.target?.name == "password") {
-      validate("email",data.email) 
-     validate("password",event.target.value)
-    }
   };
   const handleSubmit = async (event: any) => {
     event.preventDefault();
-    setLoading(true);
-
-    // const iterableData = Object.entries(data);
-    // iterableData.forEach((item) => {
-    //   const [key, value] = item;
-    //   validate(key, value);
-    // });
-
-    const response: any = await auth.login({
-      email: data.email,
-      password: data.password,
+    
+    Object.entries(data).forEach((data) => {
+      console.log(data);
+      validate(data[0], data[1]);
     });
-
-    if (response.error) {
-      const { error, message } = response;
-      console.error("Error en submit", error);
-      setLoading(false);
-      setSubmitMessage(`${message}`);
-    } else {
-      userDispatch({ type: "SET_USER", payload: response });
-      setSubmitMessage("Loggin succesfull");
+    if (Object.values(validationErrors).some((error) => error)) {
+      return
+    }
+    setLoading(true);
+    try {
+      const user = await auth.login({
+        email: data.email,
+        password: data.password,
+      }) as Auth
+      userDispatch({type:"SET_USER",payload:{user:{email:user.user.email}}})
       navigate("/profile");
       setLoading(false);
+    } catch (error) {
+      setLoading(false);
+      setSubmitMessage(`${error}`);
     }
-
-    // console.log(data)
   };
 
   const handleBlur: FocusEventHandler<HTMLInputElement> = (event) => {
@@ -71,41 +63,35 @@ export const LoginForm = () => {
     switch (field) {
       case "email":
         const emailResult = emailSchema.validate({ [field]: value });
-
-        if (emailResult.error) {
+        if (emailResult.error != null) {
           setValidationErrors({
             ...validationErrors,
             email: emailResult.error.message,
           });
-          setIsDisable(true);
         } else {
           setValidationErrors({
             ...validationErrors,
-            email: null,
+            email: undefined,
           });
-          setIsDisable(false)
         }
-
         break;
-      case 'password':
+
+      case "password":
         const passwordResult = passwordSchema.validate({ [field]: value });
-        if (passwordResult.error) {
+        console.log(passwordResult);
+        if (passwordResult.error != null) {
           setValidationErrors({
             ...validationErrors,
             password:
               "password have to consist in characters between 8 and 30 from the set of uppercase and lowercase letters (a-z, A-Z) and digits (0-9).",
           });
-          setIsDisable(true);
         } else {
           setValidationErrors({
             ...validationErrors,
-            password: null,
+            password: undefined,
           });
-          setIsDisable(false)
         }
-
-
-      break;
+        break;
 
       default:
         break;
@@ -117,9 +103,9 @@ export const LoginForm = () => {
       <div className="input-groups">
         <label htmlFor="email">Email</label>
         <input
+          onInput={handleInputChange}
           onBlur={handleBlur}
           required
-          onChange={handleInputChange}
           id="email"
           type="email"
           name="email"
@@ -129,17 +115,18 @@ export const LoginForm = () => {
       <div className="input-groups">
         <label htmlFor="password">Password</label>
         <input
-          minLength={8}
+          onInput={handleInputChange}
           onBlur={handleBlur}
           required
-          onChange={handleInputChange}
           type="password"
           name="password"
           id="password"
         />
         {validationErrors.password && <p>{validationErrors.password}</p>}
       </div>
-      <button className="btn--secondary" disabled={isDisable} type="submit">Login</button>
+      <button className="btn--secondary" type="submit">
+        Login
+      </button>
       {submitMessage && <p>{submitMessage}</p>}
       {loading && <p>Loading...</p>}
     </form>
