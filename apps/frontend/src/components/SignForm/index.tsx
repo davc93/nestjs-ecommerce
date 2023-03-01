@@ -31,13 +31,14 @@ export const SignUpForm = () => {
   const handleSubmit = async (event: any) => {
     event.preventDefault();
     
-    Object.entries(data).forEach((data) => {
-      console.log(data);
-      validate(data[0], data[1]);
-    });
-    if (Object.values(validationErrors).some((error) => error)) {
-      return
-    }
+    // Frontend Validations
+    // Object.entries(data).forEach((data) => {
+    //   console.log(data);
+    //   validate(data[0], data[1]);
+    // });
+    // if (Object.values(validationErrors).some((error) => error)) {
+    //   return
+    // }
     setLoading(true);
     try {
       await auth.signUp({

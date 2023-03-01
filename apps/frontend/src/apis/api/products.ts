@@ -7,3 +7,7 @@ export const getProducts = async () => {
 
   return products
 }
+
+export const getSingleProduct = () => {
+  
+}

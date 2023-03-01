@@ -40,3 +40,11 @@ export const deleteProfile = async (auth: Auth) => {
   const response = await rta.json()
   return response
 }
+
+export const getProfileOrders =async () => {
+  
+}
+
+export const getProfileSingleOrder = async () => {
+  
+}
