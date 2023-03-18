@@ -40,6 +40,7 @@ export const LoginForm = () => {
     // if (Object.values(validationErrors).some((error) => error)) {
     //   return
     // }
+    console.log(data)
     setLoading(true);
     try {
       const user = await auth.login({

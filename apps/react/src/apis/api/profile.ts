@@ -2,7 +2,7 @@ import { config } from '../../config'
 import { type Auth } from '../../models/api/auth.model'
 import { type User } from '../../models/api/user.model'
 
-export const getProfile = async (auth: Auth) => {
+export const getProfile = async (auth: Auth): Promise<Partial<User>>  => {
   const response = await fetch(`${config.apiUrl}/profile`, {
     method: 'GET',
     headers: {

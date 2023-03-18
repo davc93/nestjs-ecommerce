@@ -1,0 +1,173 @@
+{
+    "products":[
+        {
+          "id": 1,
+          "name": "Product 9",
+          "description": "lorem lorem lorem",
+          "price": 1000,
+          "stock": 100,
+          "image": "https://i.imgur.com/U4iGx1j.jpeg",
+          "createAt": "2023-02-22T20:09:48.011Z",
+          "updateAt": "2023-02-22T20:09:48.011Z",
+          "brand": null
+        },
+        {
+          "id": 2,
+          "name": "Bajo la Luna",
+          "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.",
+          "price": 10000,
+          "stock": 100,
+          "image": "https://i.imgur.com/U4iGx1j.jpeg",
+          "createAt": "2023-02-23T15:56:03.575Z",
+          "updateAt": "2023-02-23T15:56:03.575Z",
+          "brand": {
+            "id": 1,
+            "name": "Del Valle",
+            "image": "https://i.imgur.com/U4iGx1j.jpeg",
+            "createAt": "2023-02-23T15:53:36.865Z",
+            "updateAt": "2023-02-23T15:53:36.865Z"
+          }
+        },
+        {
+          "id": 3,
+          "name": "El Camino del Sol",
+          "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.",
+          "price": 10000,
+          "stock": 100,
+          "image": "https://i.imgur.com/U4iGx1j.jpeg",
+          "createAt": "2023-02-23T15:56:52.287Z",
+          "updateAt": "2023-02-23T15:56:52.287Z",
+          "brand": {
+            "id": 1,
+            "name": "Del Valle",
+            "image": "https://i.imgur.com/U4iGx1j.jpeg",
+            "createAt": "2023-02-23T15:53:36.865Z",
+            "updateAt": "2023-02-23T15:53:36.865Z"
+          }
+        },
+        {
+          "id": 4,
+          "name": "Estrella de Medianoche",
+          "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.",
+          "price": 90000,
+          "stock": 100,
+          "image": "https://i.imgur.com/U4iGx1j.jpeg",
+          "createAt": "2023-02-23T15:57:11.013Z",
+          "updateAt": "2023-02-23T15:57:11.013Z",
+          "brand": {
+            "id": 1,
+            "name": "Del Valle",
+            "image": "https://i.imgur.com/U4iGx1j.jpeg",
+            "createAt": "2023-02-23T15:53:36.865Z",
+            "updateAt": "2023-02-23T15:53:36.865Z"
+          }
+        },
+        {
+          "id": 5,
+          "name": "Vino de Terciopelo",
+          "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.",
+          "price": 90000,
+          "stock": 100,
+          "image": "https://i.imgur.com/U4iGx1j.jpeg",
+          "createAt": "2023-02-23T15:57:24.240Z",
+          "updateAt": "2023-02-23T15:57:24.240Z",
+          "brand": {
+            "id": 1,
+            "name": "Del Valle",
+            "image": "https://i.imgur.com/U4iGx1j.jpeg",
+            "createAt": "2023-02-23T15:53:36.865Z",
+            "updateAt": "2023-02-23T15:53:36.865Z"
+          }
+        },
+        {
+          "id": 6,
+          "name": "Cisne Negro",
+          "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.",
+          "price": 90000,
+          "stock": 100,
+          "image": "https://i.imgur.com/U4iGx1j.jpeg",
+          "createAt": "2023-02-23T15:57:38.664Z",
+          "updateAt": "2023-02-23T15:57:38.664Z",
+          "brand": {
+            "id": 1,
+            "name": "Del Valle",
+            "image": "https://i.imgur.com/U4iGx1j.jpeg",
+            "createAt": "2023-02-23T15:53:36.865Z",
+            "updateAt": "2023-02-23T15:53:36.865Z"
+          }
+        },
+        {
+          "id": 7,
+          "name": "Sweet Dreams",
+          "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.",
+          "price": 90000,
+          "stock": 100,
+          "image": "https://i.imgur.com/U4iGx1j.jpeg",
+          "createAt": "2023-02-23T15:58:08.428Z",
+          "updateAt": "2023-02-23T15:58:08.428Z",
+          "brand": {
+            "id": 1,
+            "name": "Del Valle",
+            "image": "https://i.imgur.com/U4iGx1j.jpeg",
+            "createAt": "2023-02-23T15:53:36.865Z",
+            "updateAt": "2023-02-23T15:53:36.865Z"
+          }
+        },
+        {
+          "id": 8,
+          "name": "Bosque Encantado",
+          "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.",
+          "price": 110000,
+          "stock": 100,
+          "image": "https://i.imgur.com/U4iGx1j.jpeg",
+          "createAt": "2023-02-23T15:58:59.146Z",
+          "updateAt": "2023-02-23T15:58:59.146Z",
+          "brand": {
+            "id": 1,
+            "name": "Del Valle",
+            "image": "https://i.imgur.com/U4iGx1j.jpeg",
+            "createAt": "2023-02-23T15:53:36.865Z",
+            "updateAt": "2023-02-23T15:53:36.865Z"
+          }
+        },
+        {
+          "id": 12,
+          "name": "Bajo la Luna 2",
+          "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.",
+          "price": 120000,
+          "stock": 100,
+          "image": "https://i.imgur.com/U4iGx1j.jpeg",
+          "createAt": "2023-02-23T15:59:56.800Z",
+          "updateAt": "2023-02-23T15:59:56.800Z",
+          "brand": {
+            "id": 1,
+            "name": "Del Valle",
+            "image": "https://i.imgur.com/U4iGx1j.jpeg",
+            "createAt": "2023-02-23T15:53:36.865Z",
+            "updateAt": "2023-02-23T15:53:36.865Z"
+          }
+        }
+      ],
+    
+      "auth":{
+        "login" :{
+
+        "access_token":"asdasdasd",
+        "user":{
+            "id":1,
+            "email":"fake@email.com",
+            "role":"customer"
+            
+        }
+        }
+      },
+      "profile":{
+        "user":{
+          "id":1,
+          "email":"fake@email.com",
+          "role":"customer"
+          
+      }
+      }
+}
+  
